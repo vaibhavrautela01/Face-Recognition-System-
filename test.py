@@ -4,7 +4,7 @@ import numpy as np
 import cv2
 from keras.models import load_model
 import numpy as np
-
+from datacollect import nameID
 
 facedetect = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
@@ -19,9 +19,9 @@ model = load_model('keras_model.h5')
 
 def get_className(classNo):
 	if classNo==0:
-		return "Vaibhav Rautela"
+		return nameID
 	elif classNo==1:
-		return "Virat Kholi"
+		return "unknown"
 
 while True:
 	sucess, imgOrignal=cap.read()
@@ -51,24 +51,3 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
